@@ -1,0 +1,40 @@
+{
+    "manifest_version": 3,
+    "name": "JobHound",
+    "version": "1.0",
+    "description": "Automated job application process",
+    "icons": {
+        "16": "images/16.png",
+        "48": "images/32.png",
+        "128": "images/128.png"
+    },
+    
+    "action": {
+        "default_icon": {
+            "16": "images/16.png",
+            "48": "images/32.png",
+            "128": "images/128.png"
+        },
+        "default_title": "JobHound",
+        "default_popup": "popup/popup.html"
+    },
+    "permissions": [
+        "storage",
+        "activeTab",
+        "scripting"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ]
+   
+}
